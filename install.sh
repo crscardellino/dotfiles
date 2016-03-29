@@ -23,7 +23,12 @@ then
 fi
 
 echo "Changing shell to zsh"
-chsh -s `which zsh`
+if [ -f /etc/shells ]
+then
+    chsh -s /bin/zsh
+else
+    chsh -s `which zsh`
+fi
 
 echo "Installing vim plugins"
 rm -rf $HOME/.vim
