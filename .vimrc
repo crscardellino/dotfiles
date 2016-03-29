@@ -74,6 +74,7 @@ command WQ :wall | :qall
 
 " "Vimrc" to edit the .vimrc file
 command Vimrc :tabe ~/.vimrc
+
 " =================
 " Buffers & Windows
 " =================
