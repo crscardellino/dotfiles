@@ -9,7 +9,7 @@ chomp $cdir;
 my $hdir = $ENV{'HOME'};
 chomp $hdir;
 
-foreach my $dotfile(qw/gitconfig vim/) {
+foreach my $dotfile(qw/gitconfig vimrc/) {
     my $file = "$cdir/.$dotfile";
     my $link = "$hdir/.$dotfile";
 
