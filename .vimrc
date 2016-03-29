@@ -72,13 +72,13 @@ set title
 let mapleader = ","
 let maplocalleader = "\\"
 
-" Capital "Q" to quit all
+" capital "Q" to quit all
 command Q :qall
 
-" Capital "W" to write all
+" capital "W" to write all
 command W :wall
 
-" Capital "WQ" to write and quit all
+" capital "WQ" to write and quit all
 command WQ :wall | :qall
 
 " "Vimrc" to edit the .vimrc file
@@ -109,7 +109,10 @@ nmap <c-q> {gq}
 
 " insert newline character
 nmap <c-o> O<esc>j
+" for legacy terminals
 nmap <m-o> o<esc>k
+" for OSX terminal
+nmap ø o<esc>k
 
 " insert new spaced paragraph
 " before non-blank line 
@@ -243,6 +246,9 @@ set smartcase
 " Airline
 set laststatus=2
 set ttimeoutlen=50
+
+" gui only
+set guifont=Menlo\ for\ Powerline
 
 let g:airline#extensions#tabline#enabled        = 1
 let g:airline#extensions#branch#enabled         = 1
