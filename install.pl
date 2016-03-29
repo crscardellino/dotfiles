@@ -17,5 +17,6 @@ foreach my $dotfile(qw/gitconfig vim/) {
     system "ln -s $file $link";
 }
 
+system "mkdir -p ~/.vim/bundle";
 system "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim";
 system "vim +PluginInstall +qall";
