@@ -88,12 +88,9 @@ fi
 # npm root
 [[ -d /usr/local/lib/node_modules ]] && export NODE_PATH=/usr/local/lib/node_modules
 
-# Torch
-[[ -d $HOME/torch/ ]] && source $HOME/torch/install/bin/torch-activate
-
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Extras
-[[ -f "$HOME/.zshrc_profile" ]] && source "$HOMW/.zshrc_profile"
+[[ -f "$HOME/.zshrc_extras" ]] && source "$HOMW/.zshrc_extras"
