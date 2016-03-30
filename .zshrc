@@ -93,4 +93,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Extras
-[[ -f "$HOME/.zshrc_extras" ]] && source "$HOMW/.zshrc_extras"
+[[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"
