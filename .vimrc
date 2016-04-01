@@ -2,9 +2,6 @@
 " Creator:
 "       Cristian A. Cardellino
 "       http://crscardellino.me
-"
-" Version:
-"       1.0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " =============
@@ -33,6 +30,7 @@ Plugin 'VundleVim/Vundle.vim'
 " personal plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
