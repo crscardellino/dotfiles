@@ -1,0 +1,56 @@
+" =======
+" General
+" =======
+
+" <leader> and <localleader>
+let mapleader = ","
+let maplocalleader = "\\"
+
+" =================
+" Buffers & Windows
+" =================
+
+" Buffer switching
+nnoremap <leader>n :bn<cr>
+nnoremap <leader>p :bp<cr>
+
+" ==============
+" Edition & Text
+" ==============
+
+" insert newline character
+nmap <c-o> O<esc>j
+nmap ø o<esc>k
+
+" insert new spaced paragraph
+" before non-blank line 
+nmap <leader>O O<esc>O
+" after non-blank line
+nmap <localleader>o o<esc>o
+" in blank line
+nmap <leader>o o<esc>O
+
+nnoremap <cr> a<cr><esc>k$
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" ======
+" Moving
+" ======
+
+" treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
+
+" Smart way to move between windows
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+
+" strict to vim mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
