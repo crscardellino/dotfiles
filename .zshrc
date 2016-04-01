@@ -78,7 +78,7 @@ if [ -d $HOME/.virtualenvs ]
 then
     export WORKON_HOME=$HOME/.virtualenvs
     export VIRTUALENVWRAPPER_PYTHON=`which python`
-    source /usr/local/bin/virtualenvwrapper.sh
+    source `which virtualenvwrapper.sh`
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
 fi
 
