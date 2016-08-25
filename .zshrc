@@ -56,6 +56,9 @@ alias rm="rm -i"
 # no autocorrection
 unsetopt correct_all
 
+# to activate wildcards in scp and others
+setopt nonomatch
+
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
