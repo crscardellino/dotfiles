@@ -145,6 +145,10 @@ set copyindent
 " toggle pastemode
 set pastetoggle=<F2>
 
+" set different tabspaces for some files
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype tex setlocal ts=2 sts=2 sw=2
+
 " ===================
 " Files & Directories
 " ===================
