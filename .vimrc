@@ -31,6 +31,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'lervag/vimtex'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -170,6 +171,9 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,.git/,tmp/
+
+" set default filetypes
+let g:tex_flavor = "latex"
 
 " =========
 " Interface
