@@ -34,6 +34,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'lervag/vimtex'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Vundle end
@@ -268,6 +269,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+nnoremap <localleader>st :SyntasticToggleMode<cr>
 
 " NERDTree
 autocmd VimEnter * NERDTree
