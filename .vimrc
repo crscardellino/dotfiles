@@ -86,6 +86,12 @@ set hidden
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 
+" Resize
+nnoremap <localleader>[ :vertical resize -5<cr>
+nnoremap <localleader>] :vertical resize +5<cr>
+nnoremap <localleader>{ :res -5<cr>
+nnoremap <localleader>} :res +5<cr>
+
 " ==============
 " Edition & Text
 " ==============
