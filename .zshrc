@@ -80,13 +80,13 @@ export SAVEHIST=500000
 export FIGNORE=DS_Store
 
 # Setting environment variables for working with virtualenv
-if [ -d $HOME/.virtualenvs ]
-then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export VIRTUALENVWRAPPER_PYTHON=`which python`
-    source `which virtualenvwrapper.sh`
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-fi
+# if [ -d $HOME/.virtualenvs ]
+# then
+#     export WORKON_HOME=$HOME/.virtualenvs
+#     export VIRTUALENVWRAPPER_PYTHON=`which python`
+#     source `which virtualenvwrapper.sh`
+#     export PIP_VIRTUALENV_BASE=$WORKON_HOME
+# fi
 
 # perlbrew
 [[ -d $HOME/perl5/perlbrew/ ]] && source $HOME/perl5/perlbrew/etc/bashrc
