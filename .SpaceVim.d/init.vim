@@ -8,10 +8,19 @@
 " SpaceVim
 " ========
 
-" Plugin manager
+" plugin manager
 let g:spacevim_plugin_manager = 'dein'
 
-" Guifont
+" don't check install on startup
+let g:spacevim_checkinstall = 0
+
+" disabled plugins
+let g:spacevim_disabled_plugins = [
+    \ ['vim-scripts/TaskList.vim'],
+    \ ['vim-scripts/taglist.vim'],
+    \ ]
+
+" guifont
 let g:spacevim_guifont = 'Menlo\ for\ Powerline'
 
 " =======
