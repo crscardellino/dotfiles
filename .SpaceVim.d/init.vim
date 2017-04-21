@@ -191,3 +191,9 @@ set ignorecase
 
 " case-sensitive is patter is not all-lowercase
 set smartcase
+
+" =======
+" Plugins
+" =======
+
+let g:spacevim_lint_on_save = 0

@@ -278,10 +278,6 @@ let g:syntastic_check_on_wq = 0
 
 nnoremap <localleader>st :SyntasticToggleMode<cr>
 
-" NERDTree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-
 " vimtex
 let g:vimtex_latexmk_continuous = 0
 let g:vimtex_latexmk_background = 1
