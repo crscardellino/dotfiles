@@ -23,6 +23,12 @@ let g:spacevim_disabled_plugins = [
 " guifont
 let g:spacevim_guifont = 'Menlo\ for\ Powerline'
 
+" syntastic instead of neomake
+let g:spacevim_enable_neomake = 0
+
+" not conceal bold/italics
+let g:tex_conceal = "amgs"
+
 " =======
 " General
 " =======
