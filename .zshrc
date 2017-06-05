@@ -84,12 +84,8 @@ export FIGNORE=DS_Store
 # use rake alias if it exists
 type rake >/dev/null 2>&1 && alias rake="noglob rake"
 
-function removeFromPath() {
-    export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
-}
-
 # Ruby env
-[[ -d "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
+[[ -d "$HOME/.rbenv/bin" ]] && export PATH=$HOME/.rbenv/bin:$PATH && eval "$(rbenv init -)"
 
 # Extras
 [[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"
