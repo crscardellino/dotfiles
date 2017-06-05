@@ -84,8 +84,5 @@ export FIGNORE=DS_Store
 # use rake alias if it exists
 type rake >/dev/null 2>&1 && alias rake="noglob rake"
 
-# Ruby env
-[[ -d "$HOME/.rbenv/bin" ]] && export PATH=$HOME/.rbenv/bin:$PATH && eval "$(rbenv init -)"
-
 # Extras
 [[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"
