@@ -69,8 +69,10 @@ export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # Extending the path
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$HOME/bin:$HOME/opt:$PATH
+export USR_LOCAL=/usr/local
+export PATH=$USR_LOCAL/bin:$USR_LOCAL/sbin:$PATH
+export LOCAL_PATH=$HOME/.local
+export PATH=$LOCAL_PATH/bin:$LOCAL_PATH/sbin:$PATH
 
 # History file sizes
 export HISTSIZE=500000
@@ -79,27 +81,15 @@ export SAVEHIST=500000
 # Ignore DS_Store files
 export FIGNORE=DS_Store
 
-# Setting environment variables for working with virtualenv
-# if [ -d $HOME/.virtualenvs ]
-# then
-#     export WORKON_HOME=$HOME/.virtualenvs
-#     export VIRTUALENVWRAPPER_PYTHON=`which python`
-#     source `which virtualenvwrapper.sh`
-#     export PIP_VIRTUALENV_BASE=$WORKON_HOME
-# fi
-
-# perlbrew
-[[ -d $HOME/perl5/perlbrew/ ]] && source $HOME/perl5/perlbrew/etc/bashrc
-
-# npm root
-[[ -d /usr/local/lib/node_modules ]] && export NODE_PATH=/usr/local/lib/node_modules
-
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # use rake alias if it exists
 type rake >/dev/null 2>&1 && alias rake="noglob rake"
+
+function removeFromPath() {
+    export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
+}
+
+# Ruby env
+[[ -d "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
 
 # Extras
 [[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"
