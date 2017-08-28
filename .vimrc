@@ -31,11 +31,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'lervag/vimtex'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'lervag/vimtex'
 
 " Vundle end
 call vundle#end()
@@ -74,6 +72,9 @@ command WQ :wall | :qall
 
 " "Vimrc" to edit the .vimrc file
 command Vimrc :tabe ~/.vimrc
+
+" autocommand to automatically save to git
+autocmd BufWritePost * execute '! if [ -x git.sh ]; then ./git.sh; fi'
 
 " =================
 " Buffers & Windows
