@@ -27,14 +27,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
-
-# Disable virtual env prompt
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+export EDITOR='vim'
 
 # Aliases
 if [ `uname` = "Darwin" ]
