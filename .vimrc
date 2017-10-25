@@ -33,6 +33,7 @@ Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'pangloss/vim-javascript'
 Plugin 'lervag/vimtex'
 
 " Vundle end
@@ -72,9 +73,6 @@ command WQ :wall | :qall
 
 " "Vimrc" to edit the .vimrc file
 command Vimrc :tabe ~/.vimrc
-
-" autocommand to automatically save to git
-autocmd BufWritePost * execute '! if [ -x git.sh ]; then ./git.sh; fi'
 
 " =================
 " Buffers & Windows
@@ -215,16 +213,19 @@ map j gj
 map k gk
 
 " Smart way to move between windows
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-h> <c-w>h
-map <c-l> <c-w>l
+map <c-j> <c-w>j:cd %:p:h<cr>:<cr>
+map <c-k> <c-w>k:cd %:p:h<cr>:<cr>
+map <c-h> <c-w>h:cd %:p:h<cr>:<cr>
+map <c-l> <c-w>l:cd %:p:h<cr>:<cr>
 
-" strict to vim mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" Tab to switch windows
+map <tab> <c-w>w:cd %:p:h<cr>:<cr>
+
+" strict to vim mode (no more we need it as it fulfill its purpose)
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
 
 " continue to next and previous line when moving with 'h' and 'l'
 set whichwrap+=h,l 
