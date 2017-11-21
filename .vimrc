@@ -227,8 +227,8 @@ map <tab> <c-w>w:cd %:p:h<cr>:<cr>
 " map <left> <nop>
 " map <right> <nop>
 
-" continue to next and previous line when moving with 'h' and 'l'
-set whichwrap+=h,l 
+" continue to next and previous line when moving 
+set whichwrap+=<,>,h,l,[,]
 
 " ======
 " Search
