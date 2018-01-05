@@ -101,8 +101,8 @@ syntax on
 " word wrap
 set textwidth=0
 
-" wrap paragraph
-nmap <c-q> {gq}
+" highlight column 80
+set colorcolumn=80 
 
 " insert newline character
 nmap <c-o> O<esc>j
@@ -152,6 +152,10 @@ set copyindent
 " toggle pastemode
 set pastetoggle=<F2>
 
+" set new vertical splits to the right and horizontal to below
+set splitright
+set splitbelow
+
 " set different tabspaces for some files
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype tex setlocal ts=2 sts=2 sw=2
@@ -176,6 +180,7 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" Ignore this files when using wildcards
 set wildignore=*.swp,*.bak,*.pyc,*.class,.git/,tmp/
 
 " set default filetypes
