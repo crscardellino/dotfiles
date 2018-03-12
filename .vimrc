@@ -30,11 +30,6 @@ Plugin 'VundleVim/Vundle.vim'
 " personal plugins
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'pangloss/vim-javascript'
-Plugin 'lervag/vimtex'
 
 " Vundle end
 call vundle#end()
@@ -272,24 +267,3 @@ let g:airline#extensions#branch#enabled         = 1
 let g:airline#extensions#branch#empty_message   = ''
 let g:airline#extensions#syntastic#enabled      = 1
 let g:airline_powerline_fonts                   = 1
-
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-nnoremap <localleader>st :SyntasticToggleMode<cr>
-
-" vimtex
-let g:vimtex_latexmk_continuous = 0
-let g:vimtex_latexmk_background = 1
