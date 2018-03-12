@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Creating symlinks"
-for file in gitconfig vimrc zshrc tmux.conf
+for file in gitconfig vimrc zshrc tmux.conf condarc
 do
     dotfile=$PWD/.$file
     link=$HOME/.$file

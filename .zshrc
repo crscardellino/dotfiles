@@ -69,6 +69,9 @@ export PATH=$USR_LOCAL/bin:$USR_LOCAL/sbin:$PATH
 export LOCAL_PATH=$HOME/.local
 export PATH=$LOCAL_PATH/bin:$LOCAL_PATH/sbin:$PATH
 
+# Disable virtualenv prompt
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # History file sizes
 export HISTSIZE=500000
 export SAVEHIST=500000

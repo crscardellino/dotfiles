@@ -267,7 +267,11 @@ let g:airline#extensions#branch#empty_message   = ''
 let g:airline#extensions#syntastic#enabled      = 1
 let g:airline_powerline_fonts                   = 1
 
+" Base16
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+" deoplete.nvim
+let g:deoplete#enable_at_startup = 1
