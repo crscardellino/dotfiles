@@ -10,6 +10,7 @@ prompt_datetime() {
 
 prompt_current() {
   echo -n "%{$fg[green]%}tty%l%{$reset_color%}:%{$fg[yellow]%}%~%{$reset_color%} "
+  # echo -n "%{$bg[green]%}%{$fg[black]%}tty%l%{$reset_color%}%{$fg[green]%}"$'\ue0b0'"%{$reset_color%}%{$fg[yellow]%}%~%{$reset_color%} "
 }
 
 prompt_context() {

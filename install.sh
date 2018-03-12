@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Creating symlinks"
-for file in gitconfig vimrc zshrc
+for file in gitconfig vimrc zshrc tmux.conf
 do
     dotfile=$PWD/.$file
     link=$HOME/.$file
@@ -9,12 +9,11 @@ do
     ln -s $dotfile $link
 done
 
-echo "Installing oh-my-zsh"
+echo "Installing oh-my-zsh with plugins"
 rm -rf $HOME/.oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-
-echo "Creating symlink to zsh theme"
-ln -s $PWD/ragnarok.zsh-theme $HOME/.oh-my-zsh/themes
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 if [ -f $HOME/.bash_history ]
 then
