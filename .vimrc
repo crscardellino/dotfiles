@@ -194,9 +194,16 @@ set showcmd
 " show line number
 set number
 
-" solarized dark theme setup
+" base16 solarized dark setup
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 set background=dark
 colorscheme base16-default-dark
+
+hi Normal guibg=NONE ctermbg=NONE
 
 " show matching brackets when text indicator is over them
 set showmatch
@@ -253,14 +260,6 @@ set smartcase
 " Airline
 set laststatus=2
 set ttimeoutlen=50
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
-" gui only
-set guifont=Menlo\ for\ Powerline
 
 let g:airline#extensions#tabline#enabled        = 1
 let g:airline#extensions#branch#enabled         = 1

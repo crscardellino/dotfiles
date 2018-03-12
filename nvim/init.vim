@@ -18,13 +18,13 @@ endif
 " =======================
 
 " set the runtime path to include dein and initialize
-set rtp+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim/
+set rtp+=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim/
 
 " dein setup
-if dein#load_state('~/.config/nvim/dein')
-  call dein#begin('~/.config/nvim/dein')
+if dein#load_state('~/.config/nvim/bundle')
+  call dein#begin('~/.config/nvim/bundle')
 
-  call dein#add('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim/')
+  call dein#add('~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim/')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/denite.nvim')
   if !has('nvim')
@@ -201,9 +201,16 @@ set showcmd
 " show line number
 set number
 
-" solarized dark theme setup
+" base16 solarized dark setup
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 set background=dark
 colorscheme base16-default-dark
+
+hi Normal guibg=NONE ctermbg=NONE
 
 " show matching brackets when text indicator is over them
 set showmatch
@@ -266,12 +273,6 @@ let g:airline#extensions#branch#enabled         = 1
 let g:airline#extensions#branch#empty_message   = ''
 let g:airline#extensions#syntastic#enabled      = 1
 let g:airline_powerline_fonts                   = 1
-
-" Base16
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
 
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 1
