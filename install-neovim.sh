@@ -17,7 +17,7 @@ fi
 python -c "import neovim" &> /dev/null
 if [ $? -ne 0 ]
 then
-    echo "You need to install neovim pip package"
+	echo "You need to install neovim pip package (python 2 and 3)"
     exit 1
 fi
 

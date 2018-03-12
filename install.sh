@@ -67,4 +67,5 @@ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.v
 vim +PluginInstall +qall
 
 echo "Finished the installation"
-echo "Restart the console session and run base16_solarized-dark"
+echo
+echo "RESTART THE CONSOLE SESSION AND RUN base16_solarized-dark"
