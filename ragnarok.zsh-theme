@@ -6,11 +6,12 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 prompt_datetime() {
   echo -n "%{$bg[blue]%}%{$fg[black]%} %D{%a %b %d}  %{$bg[white]%}%{$fg[blue]%}"$'\ue0b0'"%{$reset_color%}"
-  echo -n "%{$bg[white]%}%{$fg[black]%} %T  %{$bg[yellow]%}%{$fg[white]%}"$'\ue0b0'"%{$reset_color%}"
+  echo -n "%{$bg[white]%}%{$fg[black]%} %T  %{$bg[green]%}%{$fg[white]%}"$'\ue0b0'"%{$reset_color%}"
 }
 
 prompt_current() {
-  echo -n "%{$bg[yellow]%}%{$fg[black]%} %d  %{$reset_color%}"
+  echo -n "%{$bg[green]%}%{$fg[black]%} tty:%l  %{$bg[yellow]%}%{$fg[green]%}"$'\ue0b0'"%{$reset_color%}"
+  echo -n "%{$bg[yellow]%}%{$fg[black]%} %~  %{$reset_color%}"
 }
 
 prompt_git() {
