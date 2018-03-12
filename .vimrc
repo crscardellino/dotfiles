@@ -28,8 +28,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " personal plugins
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Plugin 'chriskempson/base16-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -201,7 +201,7 @@ set number
 
 " solarized dark theme setup
 set background=dark
-colorscheme solarized
+colorscheme base16-default-dark
 
 " show matching brackets when text indicator is over them
 set showmatch
@@ -258,6 +258,11 @@ set smartcase
 " Airline
 set laststatus=2
 set ttimeoutlen=50
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " gui only
 set guifont=Menlo\ for\ Powerline
