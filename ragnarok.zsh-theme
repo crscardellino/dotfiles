@@ -5,7 +5,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED=" ?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 prompt_datetime() {
-  echo -n "%K{23}%F{232} %D{%a %b %d}  %K{15}%F{23}"$'\ue0b0'"%f%k"
+  echo -n "%K{232}%F{15} %D{%a %b %d}  %K{15}%F{232}"$'\ue0b0'"%f%k"
   echo -n "%K{15}%F{232} %T  %K{16}%F{15}"$'\ue0b0'"%f%k"
 }
 
