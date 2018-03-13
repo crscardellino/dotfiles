@@ -30,6 +30,7 @@ Plugin 'VundleVim/Vundle.vim'
 " personal plugins
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Vundle end
 call vundle#end()
@@ -202,6 +203,8 @@ endif
 
 set background=dark
 colorscheme base16-default-dark
+
+let g:airline_theme='base16'
 
 hi Normal guibg=NONE ctermbg=NONE
 

@@ -91,7 +91,7 @@ nvim_command=$(command -v nvim)
 if ! [ -z $nvim_command ]
 then
     alias vim=nvim
-    alias vimdiff=nvim -d
+    alias vimdiff='nvim -d'
     export EDITOR=nvim
 fi
 

@@ -36,6 +36,7 @@ if dein#load_state('~/.config/nvim/bundle')
   call dein#add('bling/vim-airline')
   call dein#add('chriskempson/base16-vim')
   call dein#add('pangloss/vim-javascript')
+  call dein#add('vim-airline/vim-airline-themes')
 
   call dein#end()
   call dein#save_state()
@@ -209,6 +210,8 @@ endif
 
 set background=dark
 colorscheme base16-default-dark
+
+let g:airline_theme='base16'
 
 hi Normal guibg=NONE ctermbg=NONE
 
