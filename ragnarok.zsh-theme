@@ -1,57 +1,53 @@
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$bg[magenta]%}%{$fg_bold[white]%} "
-ZSH_THEME_GIT_PROMPT_SUFFIX=" %{$reset_color%}%{$fg_no_bold[magenta]%}"$'\ue0b0'"%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%K{cyan}%B%F{232} "
+ZSH_THEME_GIT_PROMPT_SUFFIX=" %f%b%k%F{cyan}"$'\ue0b0'"%f%b%k"
 ZSH_THEME_GIT_PROMPT_DIRTY=" "$'\u2739'
 ZSH_THEME_GIT_PROMPT_UNTRACKED=" ?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 prompt_datetime() {
-  echo -n "%{$bg[blue]%}%{$fg[black]%} %D{%a %b %d}  %{$bg[white]%}%{$fg[blue]%}"$'\ue0b0'"%{$reset_color%}"
-  echo -n "%{$bg[white]%}%{$fg[black]%} %T  %{$bg[green]%}%{$fg[white]%}"$'\ue0b0'"%{$reset_color%}"
+  echo -n "%K{23}%F{232} %D{%a %b %d}  %K{15}%F{23}"$'\ue0b0'"%f%k"
+  echo -n "%K{15}%F{232} %T  %K{16}%F{15}"$'\ue0b0'"%f%k"
 }
 
 prompt_current() {
-  echo -n "%{$bg[green]%}%{$fg[black]%} tty:%l  %{$bg[yellow]%}%{$fg[green]%}"$'\ue0b0'"%{$reset_color%}"
-  echo -n "%{$bg[yellow]%}%{$fg[black]%} %~  %{$reset_color%}"
+  echo -n "%K{16}%F{232} tty:%l  %K{blue}%F{16}"$'\ue0b0'"%f%k"
+  echo -n "%K{blue}%F{232} %~  %f%k"
 }
 
 prompt_git() {
   git_info=$(git_prompt_info)
   if [ "$git_info" = "" ]
   then
-    echo "%{$fg[yellow]%}"$'\ue0b0'"%{$reset_color%}"
+    echo "%F{blue}"$'\ue0b0'"%f%k"
   else
-    echo -n "%{$bg[magenta]%}%{$fg[yellow]%}"$'\ue0b0'"%{$reset_color%}"
+    echo -n "%K{cyan}%F{blue}"$'\ue0b0'"%f%k"
     echo $git_info
   fi
 }
 
 prompt_context() {
-  echo -n "%{$bg[cyan]%}%{$fg[black]%} %n %{$bg[red]%}%{$fg[cyan]%}"$'\ue0b0'
-  echo -n "%{$bg[red]%}%{$fg_bold[white]%} %m %{$reset_color%}%{$bg[yellow]%}%{$fg[red]%}"$'\ue0b0'"%{$reset_color%}"
-  echo -n "%{$bg[yellow]%}%{$fg[black]%} %c "
+  echo -n "%K{24}%F{21} %n %K{88}%F{24}"$'\ue0b0'
+  echo -n "%K{88}%B%F{white} %m %f%b%k%K{yellow}%F{88}"$'\ue0b0'"%f%k"
+  echo -n "%K{yellow}%F{232} %c "
 
   _conda_path=$CONDA_ENV_PATH$CONDA_PREFIX
   if ! [ -z "$_conda_path" ]
   then
-    echo -n "%{$fg_bold[white]%}(conda: $(basename $_conda_path)) %{$reset_color%}"
+    echo -n "%B%F{white}(conda: $(basename $_conda_path)) %f%b"
   elif ! [ -z $VIRTUAL_ENV ]
   then
-    echo -n "%{$fg_bold[white]%}(venv: $(basename $VIRTUAL_ENV)) %{$reset_color%}"
+    echo -n "%B%F{white}(venv: $(basename $VIRTUAL_ENV)) %f%b"
   fi
 
   if [ $RETVALUE -eq 0 ]
   then
-    echo -n "%{$bg[green]%}%{$fg[yellow]%}"$'\ue0b0'"%{$reset_color%}"
-    echo -n "%{$bg[green]%}%{$fg_bold[white]%} "$'\u2713'" %{$reset_color%}%{$fg[green]%}"$'\ue0b0'
+    echo -n "%K{green}%F{yellow}"$'\ue0b0'"%f%k"
+    echo -n "%K{green}%B%F{white} "$'\u2713'" %f%b%k%F{green}"$'\ue0b0'
   else
-    echo -n "%{$bg[red]%}%{$fg[yellow]%}"$'\ue0b0'"%{$reset_color%}"
-    echo -n "%{$bg[red]%}%{$fg_bold[white]%} "$'\u2717'" %{$reset_color%}%{$fg[red]%}"$'\ue0b0'
+    echo -n "%K{red}%F{yellow}"$'\ue0b0'"%f%k"
+    echo -n "%K{red}%B%F{white} "$'\u2717'" %f%b%k%F{red}"$'\ue0b0'
   fi
 }
-
-# prompt_virtualenv() {
-#   [[ -n $VIRTUAL_ENV && -n $VIRTUAL_ENV_DISABLE_PROMPT ]] && echo -n "(%{$fg[red]%}"`basename $VIRTUAL_ENV`"%{$reset_color%})"
-# }
 
 ## Main prompt
 build_prompt() {
