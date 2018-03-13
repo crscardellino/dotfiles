@@ -8,6 +8,7 @@ then
     exit 1
 fi
 
+unalias vim &> /dev/null
 vim_command=$(command -v vim)
 if [ -z $vim_command ]
 then
