@@ -20,21 +20,16 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 # User configuration
-
 source $ZSH/oh-my-zsh.sh
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+# Color for zsh-autosuggestions
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=24'
 
-# Disable virtual env prompt
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
 
 # Aliases
 if [ `uname` = "Darwin" ]
@@ -74,6 +69,9 @@ export PATH=$USR_LOCAL/bin:$USR_LOCAL/sbin:$PATH
 export LOCAL_PATH=$HOME/.local
 export PATH=$LOCAL_PATH/bin:$LOCAL_PATH/sbin:$PATH
 
+# Disable virtualenv prompt
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # History file sizes
 export HISTSIZE=500000
 export SAVEHIST=500000
@@ -83,6 +81,19 @@ export FIGNORE=DS_Store
 
 # use rake alias if it exists
 type rake >/dev/null 2>&1 && alias rake="noglob rake"
+
+# Base16
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# Use nvim instead of vim if available
+nvim_command=$(command -v nvim)
+if ! [ -z $nvim_command ]
+then
+    alias vim=nvim
+    alias vimdiff='nvim -d'
+    export EDITOR=nvim
+fi
 
 # Extras
 [[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"

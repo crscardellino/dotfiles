@@ -9,31 +9,38 @@
 " =============
 
 " use vim settings, not vi settings (needed)
-set nocompatible
-
-" filetype detection off for Vundle
-filetype off
+if &compatible
+  set nocompatible
+endif
 
 " =======================
-" Vundle (plugin manager)
+" dein (plugin manager)
 " =======================
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" set the runtime path to include dein and initialize
+set rtp+=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim/
 
-" Vundle start
-call vundle#begin()
+" dein setup
+if dein#load_state('~/.config/nvim/bundle')
+  call dein#begin('~/.config/nvim/bundle')
 
-" Vundle plugin, required
-Plugin 'VundleVim/Vundle.vim'
+  call dein#add('~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim/')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/denite.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
-" personal plugins
-Plugin 'bling/vim-airline'
-Plugin 'chriskempson/base16-vim'
-Plugin 'vim-airline/vim-airline-themes'
+  " personal plugins
+  call dein#add('bling/vim-airline')
+  call dein#add('chriskempson/base16-vim')
+  call dein#add('pangloss/vim-javascript')
+  call dein#add('vim-airline/vim-airline-themes')
 
-" Vundle end
-call vundle#end()
+  call dein#end()
+  call dein#save_state()
+endif
 
 " required for Vundle
 filetype plugin indent on
@@ -263,9 +270,12 @@ set smartcase
 " Airline
 set laststatus=2
 set ttimeoutlen=50
-
+ 
 let g:airline#extensions#tabline#enabled        = 1
 let g:airline#extensions#branch#enabled         = 1
 let g:airline#extensions#branch#empty_message   = ''
 let g:airline#extensions#syntastic#enabled      = 1
 let g:airline_powerline_fonts                   = 1
+
+" deoplete.nvim
+let g:deoplete#enable_at_startup = 1

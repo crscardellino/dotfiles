@@ -20,9 +20,9 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 export HISTFILESIZE=500000
 export HISTSIZE=500000
 
-# Editor (for MC)
+# Editor
 export EDITOR="vim"
 
 # Personal opt programs added to path
-PATH=$PATH:$HOME/opt
+PATH=$PATH:$HOME/.local/bin
 export PATH
