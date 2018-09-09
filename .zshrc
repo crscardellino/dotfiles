@@ -90,8 +90,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 nvim_command=$(command -v nvim)
 if ! [ -z $nvim_command ]
 then
-    alias vim=nvim
-    alias vimdiff='nvim -d'
     export EDITOR=nvim
 fi
 
