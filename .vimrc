@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Creator:
 "       Cristian A. Cardellino
-"       http://crscardellino.me
+"       https://crscardellino.github.io
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " =============
@@ -81,6 +81,10 @@ set hidden
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 
+" Tab switching
+nnoremap <localleader>n :tabnext<cr>
+nnoremap <localleader>p :tabprevious<cr>
+
 " Resize
 nnoremap <localleader>[ :vertical resize -5<cr>
 nnoremap <localleader>] :vertical resize +5<cr>
@@ -102,19 +106,8 @@ set colorcolumn=80
 
 " insert newline character
 nmap <c-o> O<esc>j
-" for legacy terminals
-nmap <m-o> o<esc>k
-" for OSX terminal
-nmap ø o<esc>k
 
-" insert new spaced paragraph
-" before non-blank line 
-nmap <leader>O O<esc>O
-" after non-blank line
-nmap <localleader>o o<esc>o
-" in blank line
-nmap <leader>o o<esc>O
-
+" insert newline
 nnoremap <cr> a<cr><esc>k$
 
 " allow backspacing over everything in insert mode
@@ -230,12 +223,6 @@ map <c-l> <c-w>l:cd %:p:h<cr>:<cr>
 
 " Tab to switch windows
 map <tab> <c-w>w:cd %:p:h<cr>:<cr>
-
-" strict to vim mode (no more we need it as it fulfill its purpose)
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
 
 " continue to next and previous line when moving 
 set whichwrap+=<,>,h,l,[,]

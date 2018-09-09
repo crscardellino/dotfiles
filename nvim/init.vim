@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Creator:
 "       Cristian A. Cardellino
-"       http://crscardellino.me
+"       https://crscardellino.github.io
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " =============
@@ -74,8 +74,8 @@ command W :wall
 " capital "WQ" to write and quit all
 command WQ :wall | :qall
 
-" "Vimrc" to edit the .vimrc file
-command Vimrc :tabe ~/.vimrc
+" "Nvimrc" to edit the nvim/init.vim file
+command Nvimrc :tabe ~/.config/nvim/init.vim
 
 " =================
 " Buffers & Windows
@@ -87,6 +87,10 @@ set hidden
 " Buffer switching
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
+
+" Tab switching
+nnoremap <localleader>n :tabnext<cr>
+nnoremap <localleader>p :tabprevious<cr>
 
 " Resize
 nnoremap <localleader>[ :vertical resize -5<cr>
@@ -109,19 +113,8 @@ set colorcolumn=80
 
 " insert newline character
 nmap <c-o> O<esc>j
-" for legacy terminals
-nmap <m-o> o<esc>k
-" for OSX terminal
-nmap ø o<esc>k
 
-" insert new spaced paragraph
-" before non-blank line 
-nmap <leader>O O<esc>O
-" after non-blank line
-nmap <localleader>o o<esc>o
-" in blank line
-nmap <leader>o o<esc>O
-
+" insert newline
 nnoremap <cr> a<cr><esc>k$
 
 " allow backspacing over everything in insert mode
@@ -238,12 +231,6 @@ map <c-l> <c-w>l:cd %:p:h<cr>:<cr>
 " Tab to switch windows
 map <tab> <c-w>w:cd %:p:h<cr>:<cr>
 
-" strict to vim mode (no more we need it as it fulfill its purpose)
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
-
 " continue to next and previous line when moving 
 set whichwrap+=<,>,h,l,[,]
 
@@ -270,7 +257,7 @@ set smartcase
 " Airline
 set laststatus=2
 set ttimeoutlen=50
- 
+
 let g:airline#extensions#tabline#enabled        = 1
 let g:airline#extensions#branch#enabled         = 1
 let g:airline#extensions#branch#empty_message   = ''
