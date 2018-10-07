@@ -93,5 +93,9 @@ then
     export EDITOR=nvim
 fi
 
+# To avoid conda's bug (https://github.com/conda/conda/issues/7031) changing it
+readonly HOST=$(cat /etc/hostname)
+export HOST
+
 # Extras
 [[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"
