@@ -102,7 +102,7 @@ syntax on
 set textwidth=0
 
 " highlight column 80
-set colorcolumn=80 
+set colorcolumn=80
 
 " insert newline character
 nmap <c-o> O<esc>j
@@ -205,7 +205,11 @@ hi Normal guibg=NONE ctermbg=NONE
 set showmatch
 
 " remove trailing whitespaces with <F5>
-:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" map \w to wrapping lines
+nnoremap <localleader>w :set wrap linebreak nolist<cr>
+
 
 " ======
 " Moving
