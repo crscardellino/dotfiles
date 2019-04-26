@@ -1,0 +1,24 @@
+{
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.fontFamily": "\"Meslo LG L DZ for Powerline\"",
+    "terminal.external.linuxExec": "gnome-terminal",
+    "vim.hlsearch": true,
+    "vim.leader": ",",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<c-o>"],
+            "after": ["O", "<esc>", "j"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<cr>"],
+            "after": ["a", "<cr>", "<esc>", "k", "$"]
+        }
+    ],
+    "vim.whichwrap": "h,l,<,>,[,]",
+    "workbench.colorTheme": "Base16 Dark Twilight",
+    "workbench.editor.highlightModifiedTabs": false,
+    "window.zoomLevel": 1
+}
