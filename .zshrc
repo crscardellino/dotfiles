@@ -99,3 +99,6 @@ export HOST
 
 # Extras
 [[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"
+
+clear
+
