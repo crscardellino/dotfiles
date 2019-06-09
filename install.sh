@@ -69,4 +69,4 @@ vim +PluginInstall +qall
 
 echo "Finished the installation"
 echo
-echo "RESTART THE CONSOLE SESSION AND RUN base16_solarized-dark"
+echo "RESTART THE CONSOLE SESSION AND RUN base16_twilight"

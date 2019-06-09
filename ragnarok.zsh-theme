@@ -33,10 +33,10 @@ prompt_context() {
   _conda_path=$CONDA_ENV_PATH$CONDA_PREFIX
   if ! [ -z "$_conda_path" ]
   then
-    echo -n "%B%F{white}(conda: $(basename $_conda_path)) %f%b"
+    echo -n "%B%F{black}(conda: $(basename $_conda_path)) %f%b"
   elif ! [ -z $VIRTUAL_ENV ]
   then
-    echo -n "%B%F{white}(venv: $(basename $VIRTUAL_ENV)) %f%b"
+    echo -n "%B%F{black}(venv: $(basename $VIRTUAL_ENV)) %f%b"
   fi
 
   if [ $RETVALUE -eq 0 ]
