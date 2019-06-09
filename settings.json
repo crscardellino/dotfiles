@@ -1,4 +1,5 @@
 {
+    "editor.rulers": [100, 120],
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "terminal.integrated.fontFamily": "\"Meslo LG L DZ for Powerline\"",
@@ -19,6 +20,10 @@
     ],
     "vim.whichwrap": "h,l,<,>,[,]",
     "workbench.colorTheme": "Base16 Dark Twilight",
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#7587a6"
+    },
+    "workbench.editor.enablePreview": false,
     "workbench.editor.highlightModifiedTabs": false,
     "window.zoomLevel": 1
 }
