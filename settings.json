@@ -25,5 +25,6 @@
     },
     "workbench.editor.enablePreview": false,
     "workbench.editor.highlightModifiedTabs": false,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "workbench.startupEditor": "newUntitledFile"
 }
