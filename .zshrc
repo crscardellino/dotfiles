@@ -7,6 +7,11 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ragnarok"
 
+if [ `tput colors` != "256" ] 
+then  
+  ZSH_THEME="mh"  
+fi
+
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
@@ -82,9 +87,9 @@ export FIGNORE=DS_Store
 # use rake alias if it exists
 type rake >/dev/null 2>&1 && alias rake="noglob rake"
 
-# Base16
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# Base16 (xterm breaks with tmux and this if it is set here, let's move it)
+# BASE16_SHELL=$HOME/.config/base16-shell/
+# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Use nvim instead of vim if available
 nvim_command=$(command -v nvim)
