@@ -24,7 +24,7 @@ then
 fi
 
 echo "Creating symlinks"
-for file in gitconfig vimrc zshrc tmux.conf condarc
+for file in gitconfig vimrc zshrc condarc
 do
     dotfile=$PWD/.$file
     link=$HOME/.$file

@@ -7,13 +7,10 @@ then
     exit 1
 fi
 
-rm -rf ~/.tmux/plugins/tpm/
+rm -rf ~/.tmux/plugins/
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-echo "
-# List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
+rm -f $HOME/.tmux.conf
+ln -s $PWD/.tmux.conf $HOME/.tmux.conf
 
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run -b '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf
+echo "You should create the start sessions (base on session-sample.tmux)"
