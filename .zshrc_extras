@@ -2,6 +2,7 @@
 function setpyenv() {
     export PYENV_ROOT=$LOCAL_PATH/pyenv
     export PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
 }
 
 setpyenv
@@ -9,6 +10,7 @@ setpyenv
 # Conda
 function setconda() {
     export PATH=$(echo $PATH | sed -e "s|${LOCAL_PATH}/pyenv[^:]*:||g")
+    unset -f pyenv
     source /home/crscardellino/.local/conda/etc/profile.d/conda.sh
     conda activate
 }
