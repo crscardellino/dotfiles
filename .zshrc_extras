@@ -1,0 +1,60 @@
+# pyenv
+function setpyenv() {
+    export PYENV_ROOT=$LOCAL_PATH/pyenv
+    export PATH=$PYENV_ROOT/bin:$PATH
+}
+
+setpyenv
+
+# Conda
+function setconda() {
+    export PATH=$(echo $PATH | sed -e "s|${LOCAL_PATH}/pyenv[^:]*:||g")
+    source /home/crscardellino/.local/conda/etc/profile.d/conda.sh
+    conda activate
+}
+
+function unsetconda() {
+    conda deactivate
+    export PATH=$(echo $PATH | sed -e "s|${LOCAL_PATH}/conda[^:]*:||g")
+    setpyenv
+}
+
+# "open" for linux
+function open() {
+    xdg-open $1 &> /dev/null
+}
+
+# Use nvim instead of vim
+alias vim=nvim
+alias vimdiff="nvim -d"
+
+# xclip to clipboard
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -out -selection clipboard"
+
+# For opening of anything in gnome
+function open() {
+    xdg-open $1 &> /dev/null
+}
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# sbt
+export PATH="$PATH:$LOCAL_PATH/sbt/bin"
+
+# Base16
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# yarn
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Spark
+# export SPARK_HOME=$LOCAL_PATH/spark
