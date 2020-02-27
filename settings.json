@@ -3,11 +3,30 @@
         "editor.detectIndentation": false,
         "editor.tabSize": 2
     },
+    "[django-html]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2
+    },
+    "[html]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2
+    },
+    "[scss]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2
+    },
     "editor.rulers": [100, 120],
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "terminal.integrated.fontFamily": "\"Meslo LG L DZ for Powerline\"",
-    "terminal.external.linuxExec": "gnome-terminal",
+    "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
     "vim.hlsearch": true,
     "vim.leader": ",",
     "vim.normalModeKeyBindings": [
@@ -30,5 +49,12 @@
     "workbench.editor.enablePreview": false,
     "workbench.editor.highlightModifiedTabs": false,
     "window.zoomLevel": 1,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.showTabs": true,
+    "C_Cpp.updateChannel": "Insiders",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "python.linting.flake8Args": [
+        "--max-line-length=100"
+    ],
+    "python.dataScience.sendSelectionToInteractiveWindow": false
 }

@@ -103,7 +103,5 @@ readonly HOST=$(cat /etc/hostname)
 export HOST
 
 # Extras
-[[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"
-
-clear
+([[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras") || echo -n
 
