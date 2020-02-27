@@ -1,7 +1,16 @@
+function unsetpath() {
+    if [ $1 ]
+    then
+        export PATH=$(echo $PATH | sed -e "s|${LOCAL_PATH}/${1}[^:]*:||g")
+    fi
+}
+
 # pyenv
 function setpyenv() {
     export PYENV_ROOT=$LOCAL_PATH/pyenv
     export PATH=$PYENV_ROOT/bin:$PATH
+    export POETRY_ROOT=$LOCAL_PATH/poetry
+    export PATH=$POETRY_ROOT/bin:$PATH
     eval "$(pyenv init -)"
 }
 
@@ -9,7 +18,8 @@ setpyenv
 
 # Conda
 function setconda() {
-    export PATH=$(echo $PATH | sed -e "s|${LOCAL_PATH}/pyenv[^:]*:||g")
+    unsetpath pyenv
+    unsetpath poetry
     unset -f pyenv
     source /home/crscardellino/.local/conda/etc/profile.d/conda.sh
     conda activate
@@ -17,7 +27,7 @@ function setconda() {
 
 function unsetconda() {
     conda deactivate
-    export PATH=$(echo $PATH | sed -e "s|${LOCAL_PATH}/conda[^:]*:||g")
+    unsetpath conda
     setpyenv
 }
 
