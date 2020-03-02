@@ -21,7 +21,7 @@ function setconda() {
     unsetpath pyenv
     unsetpath poetry
     unset -f pyenv
-    source /home/crscardellino/.local/conda/etc/profile.d/conda.sh
+    source $LOCAL_PATH/conda/etc/profile.d/conda.sh
     conda activate
 }
 
