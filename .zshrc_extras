@@ -44,29 +44,31 @@ alias vimdiff="nvim -d"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -out -selection clipboard"
 
-# For opening of anything in gnome
-function open() {
-    xdg-open $1 &> /dev/null
-}
+# Ignore DS_Store files
+export FIGNORE=DS_Store
+
+# To avoid conda's bug (https://github.com/conda/conda/issues/7031) changing it
+readonly HOST=$(cat /etc/hostname)
+export HOST
+
+# sbt
+export PATH=$LOCAL_PATH/sbt/bin:$PATH
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# use rake alias if it exists
+type rake >/dev/null 2>&1 && alias rake="noglob rake"
 
-# sbt
-export PATH="$PATH:$LOCAL_PATH/sbt/bin"
+# Spark
+export SPARK_HOME=$LOCAL_PATH/spark
 
 # Base16
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-# yarn
-# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# Spark
-# export SPARK_HOME=$LOCAL_PATH/spark
