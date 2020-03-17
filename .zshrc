@@ -68,32 +68,26 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-# Extending the path
+# Extending the PATH
+
+function clear_path() {
+    export PATH=$(
+        echo $PATH | tr ':' '\n' | nl | sort -k2 | uniq -f 1 | sort -n | 
+            cut -f 2 | tr '\n' ':' | sed -e 's/\:$//'
+        )
+}
+
 export USR_LOCAL=/usr/local
 export PATH=$USR_LOCAL/bin:$USR_LOCAL/sbin:$PATH
 export LOCAL_PATH=$HOME/.local
 export PATH=$LOCAL_PATH/bin:$LOCAL_PATH/sbin:$PATH
 
-# Disable virtualenv prompt
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-
 # History file sizes
 export HISTSIZE=500000
 export SAVEHIST=500000
 
-# Ignore DS_Store files
-export FIGNORE=DS_Store
-
-# use rake alias if it exists
-type rake >/dev/null 2>&1 && alias rake="noglob rake"
-
-# Base16 (xterm breaks with tmux and this if it is set here, let's move it)
-# BASE16_SHELL=$HOME/.config/base16-shell/
-# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
-# To avoid conda's bug (https://github.com/conda/conda/issues/7031) changing it
-readonly HOST=$(cat /etc/hostname)
-export HOST
+# Disable virtualenv prompt
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Extras
 if [ -f "$HOME/.zshrc_extras" ]
@@ -101,3 +95,4 @@ then
     source "$HOME/.zshrc_extras"
 fi
 
+clear_path
