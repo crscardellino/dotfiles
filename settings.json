@@ -19,6 +19,10 @@
         "editor.detectIndentation": false,
         "editor.tabSize": 2
     },
+    "[markdown]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 4
+    },
     "[scss]": {
         "editor.detectIndentation": false,
         "editor.tabSize": 2
@@ -56,5 +60,6 @@
     "python.linting.flake8Args": [
         "--max-line-length=100"
     ],
-    "python.dataScience.sendSelectionToInteractiveWindow": false
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "python.venvPath": "~/.cache/pypoetry/virtualenvs"
 }
