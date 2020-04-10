@@ -7,9 +7,9 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ragnarok"
 
-if [ `tput colors` != "256" ] 
-then  
-  ZSH_THEME="mh"  
+if [ `tput colors` != "256" ]
+then
+  ZSH_THEME="mh"
 fi
 
 # Uncomment the following line to use case-sensitive completion.
@@ -72,7 +72,7 @@ export LC_ALL="en_US.UTF-8"
 
 function clear_path() {
     export PATH=$(
-        echo $PATH | tr ':' '\n' | nl | sort -k2 | uniq -f 1 | sort -n | 
+        echo $PATH | tr ':' '\n' | nl | sort -k2 | uniq -f 1 | sort -n |
             cut -f 2 | tr '\n' ':' | sed -e 's/\:$//'
         )
 }
@@ -94,5 +94,9 @@ if [ -f "$HOME/.zshrc_extras" ]
 then
     source "$HOME/.zshrc_extras"
 fi
+
+# Base16
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 clear_path
