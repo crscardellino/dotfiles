@@ -29,7 +29,7 @@ rm -rf $NVIM_DIR
 mkdir -p $NVIM_BUNDLE_DIR
  
 echo "Downloading install script"
-wget https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh -O dein_installer.sh
+curl -L -o dein_installer.sh https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
 
 echo "Running install script"
 bash ./dein_installer.sh $NVIM_BUNDLE_DIR
