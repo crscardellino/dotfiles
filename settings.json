@@ -28,6 +28,11 @@
         "editor.tabSize": 2
     },
     "editor.rulers": [100, 120],
+    "files.associations": {
+        "*.env": "ini",
+        "*.env.example": "ini",
+        "Dockerfile*": "dockerfile"
+    },
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
@@ -61,5 +66,8 @@
         "--max-line-length=100"
     ],
     "python.dataScience.sendSelectionToInteractiveWindow": false,
-    "python.venvPath": "~/.cache/pypoetry/virtualenvs"
+    "python.venvPath": "~/.cache/pypoetry/virtualenvs",
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false
 }
