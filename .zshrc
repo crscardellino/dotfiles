@@ -7,9 +7,10 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ragnarok"
 
-if [ `tput colors` != "256" ]
+if [ `tput colors` != "256" ] || [ "$TERM_PROGRAM" = "vscode" ]
 then
   ZSH_THEME="mh"
+  export TERM="xterm-color"
 fi
 
 # Uncomment the following line to use case-sensitive completion.
