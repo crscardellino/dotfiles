@@ -86,6 +86,9 @@ export PATH=$LOCAL_PATH/bin:$LOCAL_PATH/sbin:$PATH
 # History file sizes
 export HISTSIZE=500000
 export SAVEHIST=500000
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
 
 # Disable virtualenv prompt
 export VIRTUAL_ENV_DISABLE_PROMPT=1
