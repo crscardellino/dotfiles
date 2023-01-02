@@ -195,15 +195,10 @@ set showcmd
 " show line number
 set number
 
-" base16 solarized dark setup
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
 set background=dark
-colorscheme base16-default-dark
 
+let base16colorspace=256
+colorscheme base16-solarized-dark
 let g:airline_theme='base16'
 
 hi Normal guibg=NONE ctermbg=NONE
