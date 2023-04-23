@@ -48,6 +48,10 @@ export FIGNORE=DS_Store
 readonly HOST=$(cat /etc/hostname)
 export HOST
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
+
 # sbt
 export PATH=$LOCAL_PATH/sbt/bin:$PATH
 
