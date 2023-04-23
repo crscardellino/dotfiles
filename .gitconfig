@@ -29,3 +29,5 @@
 	clean = git-lfs clean -- %f
 [pull]
 	ff = only
+[credential]
+	helper = store
