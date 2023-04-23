@@ -39,7 +39,7 @@
     },
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
     "vim.hlsearch": true,
     "vim.leader": ",",
     "vim.normalModeKeyBindings": [
