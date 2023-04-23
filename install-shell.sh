@@ -9,7 +9,7 @@ then
 fi
 
 echo "Creating symlinks"
-for file in gitconfig zshrc condarc
+for file in gitconfig zshrc condarc p10k.zsh
 do
     dotfile=$PWD/.$file
     link=$HOME/.$file
