@@ -8,23 +8,8 @@ then
     exit 1
 fi
 
-unalias vim &> /dev/null
-vim_command=$(command -v vim)
-if [ -z $vim_command ]
-then
-    echo "You need to install vim"
-    exit 1
-fi
-
-python_command=$(command -v python)
-if [ -z $python_command ]
-then
-    echo "You need to install python"
-    exit 1
-fi
-
 echo "Creating symlinks"
-for file in gitconfig vimrc zshrc condarc
+for file in gitconfig zshrc condarc
 do
     dotfile=$PWD/.$file
     link=$HOME/.$file
@@ -43,9 +28,7 @@ rm -rf $HOME/.oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
-echo "Creating symlink to zsh theme"
-ln -s $PWD/ragnarok.zsh-theme $HOME/.oh-my-zsh/themes
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 if [ -f $HOME/.bash_history ]
 then
@@ -60,12 +43,6 @@ then
 else
     chsh -s `which zsh`
 fi
-
-echo "Installing vim plugins"
-rm -rf $HOME/.vim
-mkdir -p $HOME/.vim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
 
 echo "Finished the installation"
 echo
