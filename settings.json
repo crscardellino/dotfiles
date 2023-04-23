@@ -55,13 +55,11 @@
         }
     ],
     "vim.whichwrap": "h,l,<,>,[,]",
-    "workbench.colorTheme": "Base16 Dark Twilight",
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#7587a6"
     },
     "workbench.editor.enablePreview": false,
     "workbench.editor.highlightModifiedTabs": false,
-    "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.showTabs": true,
     "C_Cpp.updateChannel": "Insiders",
@@ -73,5 +71,24 @@
     "python.venvPath": "~/.cache/pypoetry/virtualenvs",
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "window.zoomLevel": 1,
+    "mdb.useDefaultTemplateForPlayground": false,
+    "mdb.confirmRunAll": false,
+    "workbench.colorTheme": "Base16 Twilight Dark",
+    "base16.generator.activatedThemes": [
+        "base16-twilight-dark",
+        "base16-twilight-light"
+    ],
+    "redhat.telemetry.enabled": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false
 }
