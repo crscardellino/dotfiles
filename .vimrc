@@ -11,32 +11,26 @@
 " use vim settings, not vi settings (needed)
 set nocompatible
 
-" filetype detection off for Vundle
-filetype off
+" =========================
+" vim-plug (plugin manager)
+" =========================
 
-" =======================
-" Vundle (plugin manager)
-" =======================
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" Vundle start
-call vundle#begin()
-
-" Vundle plugin, required
-Plugin 'VundleVim/Vundle.vim'
+" vim-plug start
+call plug#begin()
 
 " personal plugins
-Plugin 'bling/vim-airline'
-Plugin 'chriskempson/base16-vim'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" Vundle end
-call vundle#end()
-
-" required for Vundle
-filetype plugin indent on
+" vim-plug end
+call plug#end()
 
 " =======
 " General
@@ -191,7 +185,7 @@ set number
 set background=dark
 
 let base16colorspace=256
-colorscheme base16-solarized-dark
+colorscheme base16-twilight
 let g:airline_theme='base16'
 
 hi Normal guibg=NONE ctermbg=NONE
@@ -223,7 +217,7 @@ map <c-l> <c-w>l:cd %:p:h<cr>:<cr>
 " Tab to switch windows
 map <tab> <c-w>w:cd %:p:h<cr>:<cr>
 
-" continue to next and previous line when moving 
+" continue to next and previous line when moving
 set whichwrap+=<,>,h,l,[,]
 
 " ======

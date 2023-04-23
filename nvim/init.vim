@@ -13,37 +13,26 @@ if &compatible
   set nocompatible
 endif
 
-" =======================
-" dein (plugin manager)
-" =======================
+" =========================
+" vim-plug (plugin manager)
+" =========================
 
-" set the runtime path to include dein and initialize
-set rtp+=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim/
-
-" dein setup
-if dein#load_state('~/.config/nvim/bundle')
-  call dein#begin('~/.config/nvim/bundle')
-
-  call dein#add('~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim/')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/denite.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
-  " personal plugins
-  call dein#add('bling/vim-airline')
-  call dein#add('chriskempson/base16-vim')
-  call dein#add('pangloss/vim-javascript')
-  call dein#add('vim-airline/vim-airline-themes')
-
-  call dein#end()
-  call dein#save_state()
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" required for Vundle
-filetype plugin indent on
+" vim-plug start
+call plug#begin()
+
+" personal plugins
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" vim-plug end
+call plug#end()
 
 " =======
 " General
@@ -198,7 +187,7 @@ set number
 set background=dark
 
 let base16colorspace=256
-colorscheme base16-solarized-dark
+colorscheme base16-twilight
 let g:airline_theme='base16'
 
 hi Normal guibg=NONE ctermbg=NONE
@@ -262,6 +251,3 @@ let g:airline#extensions#branch#enabled         = 1
 let g:airline#extensions#branch#empty_message   = ''
 let g:airline#extensions#syntastic#enabled      = 1
 let g:airline_powerline_fonts                   = 1
-
-" deoplete.nvim
-let g:deoplete#enable_at_startup = 1
