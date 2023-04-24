@@ -249,3 +249,8 @@ let g:airline#extensions#branch#enabled         = 1
 let g:airline#extensions#branch#empty_message   = ''
 let g:airline#extensions#syntastic#enabled      = 1
 let g:airline_powerline_fonts                   = 1
+
+" base16 - needed for true color support, deactivate
+" in case of incorrect colors.
+" Check here: https://github.com/chriskempson/base16-vim#troubleshooting
+set termguicolors

@@ -21,7 +21,7 @@ echo "Installing Base16 theme"
 rm -rf $HOME/.config/base16-shell
 git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
 BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && source "$BASE16_SHELL/profile_helper.sh"
 
 echo "Installing oh-my-zsh with plugins"
 rm -rf $HOME/.oh-my-zsh
