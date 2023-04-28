@@ -109,8 +109,8 @@ else
   esac
 fi
 
-## If not in ssh, activate BASE16
-if [ -z $IS_SSH ]
+## If not in ssh and not root => activate BASE16 (Otherwise can break terminal colors)
+if [ -z $IS_SSH ] && [ $EUID -ne 0 ]
 then
 	BASE16_SHELL=$HOME/.config/base16-shell/
 	[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && source "$BASE16_SHELL/profile_helper.sh"
