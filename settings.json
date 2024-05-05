@@ -1,94 +1,139 @@
 {
-    "[css]": {
-        "editor.detectIndentation": false,
-        "editor.tabSize": 2
+  "[css]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+  },
+  "[django-html]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 80
+  },
+  "[scala]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+  },
+  "base16.generator.activatedThemes": [
+    "base16-twilight-dark",
+    "base16-twilight-light"
+  ],
+  "cSpell.includeRegExpList": [
+    "comment-single-line",
+    "comment-multi-line"
+  ],
+  "cSpell.patterns": [
+    {
+      "name": "comment-single-line",
+      "pattern": "/#.*​/g"
     },
-    "[django-html]": {
-        "editor.detectIndentation": false,
-        "editor.tabSize": 2
+    {
+      "name": "comment-multi-line",
+      "pattern": "/(?:\\/\\*[\\s\\S]*?\\*\\/)/g"
+    }
+  ],
+  "editor.rulers": [
+    100,
+    120
+  ],
+  "files.associations": {
+    "*.env": "ini",
+    "*.env.example": "ini",
+    "Dockerfile*": "dockerfile"
+  },
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/.ammonite": true,
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+  "flake8.args": [
+    "--max-line-length=100"
+  ],
+  "grammarly.files.include": [
+    "**/*.md",
+    "**/*.markdown",
+    "**/*.txt"
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "vim.normalModeKeyBindings": [
+    {
+      "after": [
+        "O",
+        "<esc>",
+        "j"
+      ],
+      "before": [
+        "<c-o>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "after": [
+        "a",
+        "<cr>",
+        "<esc>",
+        "k",
+        "$"
+      ],
+      "before": [
+        "<cr>"
+      ]
     },
-    "[html]": {
-        "editor.detectIndentation": false,
-        "editor.tabSize": 2
+    {
+      "after": [
+        "g",
+        "j"
+      ],
+      "before": [
+        "j"
+      ]
     },
-    "[javascript]": {
-        "editor.detectIndentation": false,
-        "editor.tabSize": 2
-    },
-    "[javascriptreact]": {
-        "editor.detectIndentation": false,
-        "editor.tabSize": 2
-    },
-    "[markdown]": {
-        "editor.detectIndentation": false,
-        "editor.tabSize": 4
-    },
-    "[scala]": {
-        "editor.detectIndentation": false,
-        "editor.tabSize": 2
-    },
-    "[scss]": {
-        "editor.detectIndentation": false,
-        "editor.tabSize": 2
-    },
-    "editor.rulers": [100, 120],
-    "files.associations": {
-        "*.env": "ini",
-        "*.env.example": "ini",
-        "Dockerfile*": "dockerfile"
-    },
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "terminal.integrated.fontFamily": "MesloLGS NF",
-    "vim.hlsearch": true,
-    "vim.leader": ",",
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["<c-o>"],
-            "after": ["O", "<esc>", "j"]
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<cr>"],
-            "after": ["a", "<cr>", "<esc>", "k", "$"]
-        }
-    ],
-    "vim.whichwrap": "h,l,<,>,[,]",
-    "workbench.colorCustomizations": {
-        "editorRuler.foreground": "#7587a6"
-    },
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.highlightModifiedTabs": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.showTabs": true,
-    "C_Cpp.updateChannel": "Insiders",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "python.linting.flake8Args": [
-        "--max-line-length=100"
-    ],
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
-    "python.venvPath": "~/.cache/pypoetry/virtualenvs",
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
-    },
-    "window.zoomLevel": 1,
-    "mdb.useDefaultTemplateForPlayground": false,
-    "mdb.confirmRunAll": false,
-    "workbench.colorTheme": "Base16 Twilight Dark",
-    "base16.generator.activatedThemes": [
-        "base16-twilight-dark",
-        "base16-twilight-light"
-    ],
-    "redhat.telemetry.enabled": true,
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
-    ],
-    "julia.symbolCacheDownload": true,
-    "julia.enableTelemetry": false
+    {
+      "after": [
+        "g",
+        "k"
+      ],
+      "before": [
+        "k"
+      ]
+    }
+  ],
+  "vim.whichwrap": "h,l,<,>,[,]",
+  "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#7587a6"
+  },
+  "workbench.colorTheme": "Solarized Light",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.highlightModifiedTabs": false,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.startupEditor": "newUntitledFile"
 }
