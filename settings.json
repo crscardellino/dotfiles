@@ -124,6 +124,62 @@
       "before": [
         "k"
       ]
+    },
+    {
+      "after": [
+        "g",
+        "$"
+      ],
+      "before": [
+        "$"
+      ]
+    },
+    {
+      "after": [
+        "g",
+        "0"
+      ],
+      "before": [
+        "0"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "after": [
+        "g",
+        "j"
+      ],
+      "before": [
+        "j"
+      ]
+    },
+    {
+      "after": [
+        "g",
+        "k"
+      ],
+      "before": [
+        "k"
+      ]
+    },
+    {
+      "after": [
+        "g",
+        "$"
+      ],
+      "before": [
+        "$"
+      ]
+    },
+    {
+      "after": [
+        "g",
+        "0"
+      ],
+      "before": [
+        "0"
+      ]
     }
   ],
   "vim.whichwrap": "h,l,<,>,[,]",
@@ -135,5 +191,7 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": false,
   "workbench.editor.showTabs": "multiple",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "ansible.ansible.path": "/usr/bin/ansible",
+  "redhat.telemetry.enabled": true
 }
