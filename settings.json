@@ -193,5 +193,6 @@
   "workbench.editor.showTabs": "multiple",
   "workbench.startupEditor": "newUntitledFile",
   "ansible.ansible.path": "/usr/bin/ansible",
-  "redhat.telemetry.enabled": true
+  "redhat.telemetry.enabled": false,
+  "cSpell.enabled": false
 }
