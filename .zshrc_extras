@@ -5,14 +5,17 @@ function unsetpath() {
     fi
 }
 
+function unsetpyenv() {
+    unset -f pyenv
+    export PATH=$(echo $PATH | sed -e "s|${HOME}/\.pyenv[^:]*:||g")
+}
+
 # pyenv
 function setpyenv() {
     export PYENV_ROOT=$LOCAL_PATH/pyenv
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
 }
-
-setpyenv
 
 # Conda
 function setconda() {
@@ -68,3 +71,6 @@ type rake >/dev/null 2>&1 && alias rake="noglob rake"
 
 # Spark
 export SPARK_HOME=$LOCAL_PATH/spark
+
+# uv
+eval "$(uv generate-shell-completion zsh)"
