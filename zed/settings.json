@@ -10,6 +10,7 @@
   "buffer_font_family": "DejaVu Sans Mono",
   "buffer_font_size": 15,
   "cursor_blink": false,
+  "disable_ai": true,
   "ensure_final_newline_on_save": true,
   "format_on_save": "off",
   "gutter": {
