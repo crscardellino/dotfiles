@@ -45,26 +45,23 @@ alias pbpaste="xclip -out -selection clipboard"
 export FIGNORE=DS_Store
 
 # To avoid conda's bug (https://github.com/conda/conda/issues/7031) changing it
-readonly HOST=$(cat /etc/hostname)
-export HOST
+# readonly HOST=$(cat /etc/hostname)
+# export HOST
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
+hcat () {
+    pygmentize -O style=github-dark -f terminal256 "$@" | less -FRSN
+}
 
-# sbt
-export PATH=$LOCAL_PATH/sbt/bin:$PATH
+zjq () {
+    zcat "$@" | jq -C . | less -FRSN
+}
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+jjq () {
+    jq -C . "$@" | less -FRSN
+}
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+nvimbindiff () {
+    nvim -d <(xxd $1) <(xxd $2)
+}
 
-# use rake alias if it exists
-type rake >/dev/null 2>&1 && alias rake="noglob rake"
 
-# Spark
-export SPARK_HOME=$LOCAL_PATH/spark

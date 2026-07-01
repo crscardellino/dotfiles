@@ -47,7 +47,7 @@ fi
 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
-alias ll="ls -lh"
+alias ll="ls -lhF"
 alias la="ls -A"
 alias l="ls -CF"
 alias rm="rm -i"
