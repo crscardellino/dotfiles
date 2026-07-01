@@ -1,0 +1,47 @@
+[
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      // Buffer navigation (mapleader = ,)
+      ", n": "pane::ActivateNextItem",
+      ", p": "pane::ActivatePreviousItem",
+
+      // Tab/pane navigation (maplocalleader = \)
+      "\\ n": "pane::ActivateNextItem",
+      "\\ p": "pane::ActivatePreviousItem",
+
+      // Toggle word wrap (\w)
+      "\\ w": "editor::ToggleSoftWrap",
+
+      // Insert empty line above cursor without moving (replaces jump-back)
+      "ctrl-o": ["workspace::SendKeystrokes", "shift-o escape j"],
+
+      // Split current line at cursor; cursor stays at end of upper line
+      "enter": ["workspace::SendKeystrokes", "a enter escape k $"],
+
+      // j/k navigate by display line (useful when soft wrap is toggled on)
+      "j": ["workspace::SendKeystrokes", "g j"],
+      "k": ["workspace::SendKeystrokes", "g k"],
+
+      // Cycle through editor splits
+      "tab": "workspace::ActivateNextPane"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      "j": ["workspace::SendKeystrokes", "g j"],
+      "k": ["workspace::SendKeystrokes", "g k"]
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      // Window navigation between splits (works in all vim modes)
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  }
+]

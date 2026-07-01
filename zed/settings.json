@@ -1,0 +1,53 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "buffer_font_family": "DejaVu Sans Mono",
+  "buffer_font_size": 15,
+  "cursor_blink": false,
+  "ensure_final_newline_on_save": true,
+  "format_on_save": "off",
+  "gutter": {
+    "line_numbers": true
+  },
+  "hard_tabs": false,
+  "languages": {
+    "CSS": {
+      "tab_size": 2
+    },
+    "HTML": {
+      "tab_size": 2
+    },
+    "LaTeX": {
+      "tab_size": 2
+    }
+  },
+  "remove_trailing_whitespace_on_save": true,
+  "rulers": [
+    80
+  ],
+  // Disable soft line wrapping; toggle on/off in vim normal mode with \w
+  "soft_wrap": "none",
+  "tab_size": 4,
+  "theme": {
+    "dark": "Ayu Mirage",
+    "light": "Gruvbox Light Soft",
+    "mode": "dark"
+  },
+  "ui_font_family": "DejaVu Sans",
+  "ui_font_size": 15.0,
+  "ui_font_weight": 400.0,
+  "vim": {
+    // Zed uses a different regex syntax than Vim: () instead of \(\), $1 instead of \1
+    "use_regex_search": true,
+    // Case-insensitive only for f/t motions when the pattern is all-lowercase
+    "use_smartcase_find": true,
+    "use_system_clipboard": "always"
+  },
+  "vim_mode": true
+}
