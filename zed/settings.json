@@ -28,7 +28,7 @@
     "LaTeX": {
       "tab_size": 2
     },
-    "javascript": {
+    "JavaScript": {
       "tab_size": 2
     },
     "JSON": {
@@ -39,8 +39,9 @@
     }
   },
   "remove_trailing_whitespace_on_save": true,
-  "rulers": [
-    80
+  "wrap_guides": [
+    80,
+    100,
   ],
   // Disable soft line wrapping; toggle on/off in vim normal mode with \w
   "soft_wrap": "none",
