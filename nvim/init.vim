@@ -27,9 +27,11 @@ endif
 call plug#begin()
 
 " personal plugins
-Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+if has('nvim')  " Only valid for nvim instances
+  Plug 'chriskempson/base16-vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+endif
 
 " vim-plug end
 call plug#end()
@@ -134,9 +136,6 @@ set autoindent
 " copy the previous indentation on autoindenting
 set copyindent
 
-" toggle pastemode
-set pastetoggle=<F2>
-
 " set new vertical splits to the right and horizontal to below
 set splitright
 set splitbelow
@@ -184,13 +183,14 @@ set showcmd
 " show line number
 set number
 
-set background=dark
+if has('nvim')
+  set background=dark
+  let base16colorspace=256
+  colorscheme base16-twilight
+  let g:airline_theme='base16'
 
-let base16colorspace=256
-colorscheme base16-twilight
-let g:airline_theme='base16'
-
-hi Normal guibg=NONE ctermbg=NONE
+  hi Normal guibg=NONE ctermbg=NONE
+endif
 
 " show matching brackets when text indicator is over them
 set showmatch
@@ -246,11 +246,13 @@ set smartcase
 set laststatus=2
 set ttimeoutlen=50
 
-let g:airline#extensions#tabline#enabled        = 1
-let g:airline#extensions#branch#enabled         = 1
-let g:airline#extensions#branch#empty_message   = ''
-let g:airline#extensions#syntastic#enabled      = 1
-let g:airline_powerline_fonts                   = 1
+if has('nvim')
+  let g:airline#extensions#tabline#enabled        = 1
+  let g:airline#extensions#branch#enabled         = 1
+  let g:airline#extensions#branch#empty_message   = ''
+  let g:airline#extensions#syntastic#enabled      = 1
+  let g:airline_powerline_fonts                   = 1
+endif
 
 " base16 - needed for true color support, deactivate
 " in case of incorrect colors.
