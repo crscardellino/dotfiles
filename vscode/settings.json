@@ -183,7 +183,7 @@
     }
   ],
   "vim.whichwrap": "h,l,<,>,[,]",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": -0.2,
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#7587a6"
   },
@@ -194,5 +194,47 @@
   "workbench.startupEditor": "newUntitledFile",
   "ansible.ansible.path": "/usr/bin/ansible",
   "redhat.telemetry.enabled": false,
-  "cSpell.enabled": false
+  "cSpell.enabled": false,
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "extensions.ignoreRecommendations": true,
+  "clangd.path": "/home/crscardellino/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/19.1.2/clangd_19.1.2/bin/clangd",
+  "docker.extension.enableComposeLanguageServer": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "chat.disableAIFeatures": true,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "claudeCode.preferredLocation": "sidebar",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+  },
+  "ruff.lint.enable": true,
+  "claudeCode.selectedModel": "sonnet[1m]",
+  "diffEditor.renderSideBySide": false
 }
